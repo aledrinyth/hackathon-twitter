@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Frontend with Flask</title>
+</head>
+<body>
+    <h1>confirmation</h1>
+    <button id="fetchData">Fetch Data</button>
+    <div id="dataOutput"></div>
+
+    <script>
+        document.getElementById('fetchData').addEventListener('click', async () => {
+            const response = await fetch('/data');
+            const data = await response.json();
+
+            // Display data (this is a basic example, you may want to structure the output differently)
+            document.getElementById('dataOutput').innerText = JSON.stringify(data, null, 2);
+        });
+    </script>
+</body>
+</html>
