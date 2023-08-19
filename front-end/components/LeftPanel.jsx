@@ -5,14 +5,15 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import ImageIcon from '@mui/icons-material/Image';
 import HomeIcon from '@mui/icons-material/Image';
-import WorkIcon from '@mui/icons-material/Work';
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { Padding, PaddingOutlined } from '@mui/icons-material';
+import Divider from '@mui/material/Divider';
 
 export default function LeftPanel() {
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', height: '100%' ,maxWidth: 450, maxHeight:600, paddingLeft:"5%" ,bgcolor: 'background.paper' }}>
       <ListItem>
         <ListItemAvatar>  
           <Avatar>
@@ -21,27 +22,46 @@ export default function LeftPanel() {
             </Fab>
           </Avatar>
         </ListItemAvatar>
-        <Fab variant="extended">
+        <Fab variant="extended" color='primary'>
                 <HomeIcon sx={{ mr: 1 }} />
                  Home
+        </Fab>
+        <ListItemText />
+      </ListItem>
+      <Padding></Padding>
+      <Divider variant="inset" component="li" />
+      <Padding></Padding>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <Fab color='primary'>
+                <AccountCircleIcon />
             </Fab>
-        <ListItemText primary="Home"/>
+          </Avatar>
+        </ListItemAvatar>
+        <Fab variant="extended" color='primary'>
+                <AccountCircleIcon sx={{ mr: 1 }} />
+                 Profile
+        </Fab>
+        <ListItemText />
       </ListItem>
+      <Padding></Padding>
+      <Divider variant="inset" component="li" />
+      <Padding></Padding>
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <WorkIcon />
+            <Fab color='primary'>
+                <MoreHorizIcon />
+            </Fab>
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <Fab variant="extended" color='primary'>
+                <MoreHorizIcon sx={{ mr: 1 }} />
+                 More
+        </Fab>
+        <ListItemText />
+        <Padding></Padding>
       </ListItem>
     </List>
   );

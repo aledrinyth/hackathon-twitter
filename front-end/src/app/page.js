@@ -1,4 +1,10 @@
+import  Header  from './components/Header.jsx'
 import Image from 'next/image'
+import LeftPanel from './components/LeftPanel.jsx'
+import Tweet from './components/tweet.jsx'
+import Divider from '@mui/material/Divider';
+import Center from './components/Center.jsx';
+
 
 export default function Home() {
   return (
@@ -6,7 +12,7 @@ export default function Home() {
     //   <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
     //     <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
     //       Get started by editing&nbsp;
-    //       <code className="font-mono font-bold">src/app/page.js</code>
+    //       <code className="font-mono font-bold">app/page.js</code>
     //     </p>
     //     <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
     //       <a
@@ -112,17 +118,24 @@ export default function Home() {
     <html>
       <body>
         <Header/>
-        <div class="row">
-          <h1>Hello World</h1>
-          <LeftPanel>
-          </LeftPanel>
-        </div>
-        <div class="row">
-          <h1>Hello World</h1>
-        </div>
-        <div class="row">
-          <h1>Hello World</h1>
-        </div>
+        <ul>
+          <li class='coloumn'>
+            <div class="row">
+              <LeftPanel />
+              <Tweet />
+            </div>
+          </li>
+          <li class='coloumn middle1'>
+            <div class="row">
+              <Center>
+              </Center>
+            </div>
+          </li>
+          <li class='coloumn middle2'>
+            <div class="row">
+            </div>
+          </li>
+        </ul>
         {/* <table style={"width:100%"} border={"1px"}>
           <tr style={"border:1px"}>
           </tr>
@@ -131,7 +144,6 @@ export default function Home() {
           <tr style={"border:1px"}>
           </tr>
         </table> */}
-        <h1>Hello World</h1>
       </body>
     </html>
   )
