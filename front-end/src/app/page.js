@@ -1,12 +1,39 @@
+"use client"
 import  Header  from './components/Header.jsx'
 import Image from 'next/image'
 import LeftPanel from './components/LeftPanel.jsx'
 import Tweet from './components/tweet.jsx'
-import Divider from '@mui/material/Divider';
 import Center from './components/Center.jsx';
+import ExploreTweets from './components/ExploreTweets.jsx';
+import { useEffect, useState } from 'react';
+import { ArrowForwardIosOutlined } from '@mui/icons-material';
+import { data } from 'autoprefixer';
 
 
 export default function Home() {
+  // const [tweets, postTweets] = useState([])
+
+  useEffect(() => {getTweets();}),[]
+  const getTweets = async () => {const  response = await fetch("http://127.0.0.1:8000/users");
+  const data = await response.json();
+  console.log(data);
+  Center(data);}
+
+  // const OnPostTweet = async (tweet) => {
+  //   await fetch("")
+  // }
+
+  // const OnProfile = async(id) => {
+  //   const response = await fetch("");
+  //   const data = await response.json();
+  //   Center(data);
+  // }
+
+  // const Edit = async(tweet) => {
+  //   const response = await fetch("");
+  //   const data = await response.json();
+  //   Center(data);
+  // } 
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -119,20 +146,23 @@ export default function Home() {
       <body>
         <Header/>
         <ul>
-          <li class='coloumn'>
-            <div class="row">
+          <li className='coloumn'>
+            <div className="row">
               <LeftPanel />
               <Tweet />
             </div>
           </li>
-          <li class='coloumn middle1'>
-            <div class="row">
+          <li className='coloumn middle1'>
+            <div className="row">
               <Center>
               </Center>
             </div>
           </li>
-          <li class='coloumn middle2'>
-            <div class="row">
+          <li className='coloumn middle2'>
+            <div className="row">
+              <h1>Hello World</h1>
+              <ExploreTweets>
+              </ExploreTweets>
             </div>
           </li>
         </ul>
