@@ -10,22 +10,26 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Padding, PaddingOutlined } from '@mui/icons-material';
 import Divider from '@mui/material/Divider';
-
+import { Alert } from '@mui/material';
+import Button from '@mui/material/Button';
 export default function LeftPanel() {
   return (
     <List sx={{ width: '100%', height: '100%' ,maxWidth: 450, maxHeight:600, paddingLeft:"5%" ,bgcolor: 'background.paper' }}>
       <ListItem>
-        <ListItemAvatar>  
+      
+        <ListItemAvatar >  
           <Avatar>
             <Fab color='primary'>
                 <HomeIcon />
             </Fab>
           </Avatar>
         </ListItemAvatar>
+        <Button onClick={() => alert("Home")}>
         <Fab variant="extended" color='primary'>
                 <HomeIcon sx={{ mr: 1 }} />
                  Home
         </Fab>
+        </Button>
         <ListItemText />
       </ListItem>
       <Padding></Padding>

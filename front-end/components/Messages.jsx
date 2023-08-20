@@ -104,7 +104,7 @@ export default function Messages() {
 
               <ListItem button>
                 <ListItemAvatar>
-                  <Avatar Avatar />
+                  <Avatar avatar />
                 </ListItemAvatar>
                 <ListItemText primary={primary} secondary={secondary} />
               </ListItem>

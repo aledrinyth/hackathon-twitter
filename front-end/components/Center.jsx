@@ -7,15 +7,19 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-export default function ExploreTweets() {
+export default function Center({tweets}) {
   return (
+    
     <List sx={{ width: '100%', height:'100%', maxHeight:600 , maxWidth: 450, bgcolor: 'background.paper' }}>
+       {tweets.map((tweet, index) => (
+    
+
       <ListItem alignItems="flex-start" color='blue'>
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="Brunch this weekend?"
+          primary={tweet.content}
           secondary={
             <React.Fragment>
               <Typography
@@ -24,13 +28,14 @@ export default function ExploreTweets() {
                 variant="body2"
                 color="text.primary"
               >
-                Ali Connors
+                {tweets.timestamp}
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+              {tweet.user_id}
             </React.Fragment>
           }
         />
-      </ListItem>
+      </ListItem> 
+      ))  }
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
