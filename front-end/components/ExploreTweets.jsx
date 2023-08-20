@@ -32,7 +32,7 @@ export default function ExploreTweets() {
                 </ListItem>
             ))}
         </List>
-        {/* <Messages/>         */}
+        <Messages/>        
   </Box>
   );
 }
